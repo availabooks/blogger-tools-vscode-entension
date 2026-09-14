@@ -1,0 +1,81 @@
+{
+  "name": "availabooks-blog-tools",
+  "displayName": "AvailaBooks Blogger Tools",
+  "description": "Edit a Blogger-hosted Availabooks textbook's posts as local files, with an AI assistant, and publish changes back to Blogger",
+  "version": "0.0.1",
+  "publisher": "Availabookscom",
+  "license": "MIT",
+  "icon": "media/icon.png",
+  "keywords": [
+    "blogger",
+    "blogspot",
+    "textbook",
+    "availabooks",
+    "publishing"
+  ],
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other",
+    "Education"
+  ],
+  "activationEvents": [
+    "workspaceContains:books/*/blog.yaml"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "bloggerTools",
+          "title": "AvailaBooks Blog Tools",
+          "icon": "media/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "bloggerTools": [
+        {
+          "type": "webview",
+          "id": "bloggerTools.menu",
+          "name": "AvailaBooks Blog Tools",
+          "retainContextWhenHidden": true
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "bloggerTools.selectBook",
+        "title": "AvailaBooks Blog Tools: Select Book…"
+      },
+      {
+        "command": "bloggerTools.addBook",
+        "title": "AvailaBooks Blog Tools: Add Book…"
+      },
+      {
+        "command": "bloggerTools.consolidatePosts",
+        "title": "AvailaBooks Blog Tools: Consolidate Posts…"
+      },
+      {
+        "command": "bloggerTools.publish",
+        "title": "AvailaBooks Blog Tools: Sync Changes…"
+      },
+      {
+        "command": "bloggerTools.preview",
+        "title": "AvailaBooks Blog Tools: Preview…"
+      },
+      {
+        "command": "bloggerTools.signIn",
+        "title": "AvailaBooks Blog Tools: Sign In to Google"
+      },
+      {
+        "command": "bloggerTools.signOut",
+        "title": "AvailaBooks Blog Tools: Sign Out"
+      }
+    ]
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.0"
+  }
+}

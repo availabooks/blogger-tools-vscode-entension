@@ -1,0 +1,6 @@
+.vscode-test
+.vscode/launch.json
+*.vsix
+media/svgviewer-output.svg
+package-lock.json
+oauth-proxy/**

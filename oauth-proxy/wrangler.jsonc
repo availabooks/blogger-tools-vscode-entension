@@ -1,0 +1,21 @@
+{
+	"name": "availabooks-blogger-oauth-proxy",
+	"main": "src/worker.js",
+	"compatibility_date": "2026-09-12",
+	"workers_dev": true,
+	// Same account as book-js/book-sql/availabooks-system/the router Worker
+	// (see app/wrangler.jsonc) — not sensitive, an account id isn't secret.
+	"account_id": "0bfdb544606ce71a8c67be03fabd48ee",
+	"observability": {
+		"enabled": true,
+		"head_sampling_rate": 1
+	},
+	"vars": {
+		// Not sensitive — a Google OAuth client id is meant to be public (it's
+		// embedded in the extension itself, and in the browser-facing
+		// authorization URL). GOOGLE_CLIENT_SECRET is the actual secret; set it
+		// with `wrangler secret put GOOGLE_CLIENT_SECRET` (see README.md), never
+		// here.
+		"GOOGLE_CLIENT_ID": "139107500820-i0ac217r23ev9ohle17311cdtlqkvfr1.apps.googleusercontent.com"
+	}
+}
